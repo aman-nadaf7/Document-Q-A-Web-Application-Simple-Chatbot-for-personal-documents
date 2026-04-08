@@ -361,7 +361,7 @@
         document.getElementById("lock-notice").style.display = "none";
 
       } catch (err) {
-        resultDiv.innerHTML = `<div class="alert alert-error">❌ ${err.message}</div>`;
+        resultDiv.innerHTML = `<div class="alert alert-error"> ${err.message}</div>`;
         uploadBtn.disabled = false;
       } finally {
         uploadBtn.innerHTML = "Upload File";
@@ -381,12 +381,12 @@
       answerBox.style.display = "none";
 
       if (!question) {
-        resultDiv.innerHTML = `<div class="alert alert-error">❌ Please enter a question.</div>`;
+        resultDiv.innerHTML = `<div class="alert alert-error">Please enter a question.</div>`;
         return;
       }
 
       if (!currentDocumentId) {
-        resultDiv.innerHTML = `<div class="alert alert-error">❌ Please upload a document first.</div>`;
+        resultDiv.innerHTML = `<div class="alert alert-error">Please upload a document first.</div>`;
         return;
       }
 
@@ -427,7 +427,7 @@
         }
         answerBox.style.display = "block";
       } catch (err) {
-        resultDiv.innerHTML = `<div class="alert alert-error">❌ ${err.message}</div>`;
+        resultDiv.innerHTML = `<div class="alert alert-error">${err.message}</div>`;
       } finally {
         askBtn.disabled = false;
         askBtn.innerHTML = "Ask Question";
