@@ -74,7 +74,7 @@ It runs at `http://127.0.0.1:8000`. Keep this terminal open while using the app.
 
 ### 5. Open the frontend
 
-Just open `frontend/index.html` in your browser. Double-click it or drag it into Chrome/Edge.
+Just open `frontend/index.html` in your browser. Double-click it or drag it into Chrome.
 
 That's it.
 
