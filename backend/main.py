@@ -65,23 +65,19 @@ async def upload_document(file: UploadFile = File(...)):
 async def ask_question(request: AskRequest):
     """Answer a question using only the content of the uploaded document."""
 
-    # Validate question
     if not request.question or not request.question.strip():
         raise HTTPException(status_code=400, detail="Question must not be empty.")
 
-    # Check document exists
     if not document_exists(request.document_id):
         raise HTTPException(
             status_code=404,
             detail=f"Document with ID '{request.document_id}' not found. Please upload a document first."
         )
 
-    # Retrieve relevant chunks
     relevant_chunks, source_numbers = retrieve_relevant_chunks(
         request.document_id, request.question, top_k=3
     )
 
-    # Build context for the LLM
     context = "\n\n---\n\n".join(relevant_chunks)
 
     system_prompt = """You are a document question-answering assistant.
