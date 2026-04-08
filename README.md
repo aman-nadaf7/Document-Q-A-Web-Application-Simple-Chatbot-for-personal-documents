@@ -33,7 +33,7 @@ document_qa/
 │   ├── rag.py            ← chunking, embeddings, retrieval
 │   ├── models.py         ← request/response models
 │   ├── requirements.txt
-│   └── .env              ← your API key goes here (don't commit this)
+│ 
 ├── frontend/
 │   └── index.html        ← the whole UI in one file
 └── README.md
